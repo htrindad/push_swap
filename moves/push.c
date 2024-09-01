@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:48:42 by htrindad          #+#    #+#             */
-/*   Updated: 2024/08/30 19:54:05 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/01 15:58:47 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,19 @@ void	push(t_track **origin, t_track *target)
 	target->prev = malloc(sizeof(t_track));
 	target->prev->next = target;
 	target->prev->val = (*origin)->val;
+	target = target->prev;
 	*origin = (*origin)->next;
 	(*origin)->prev = NULL;
+}
+
+void	pa(t_track *a, t_track *b)
+{
+	push(&a, b);
+	write(1, "pa\n", 3);
+}
+
+void	pb(t_track *a, t_track *b)
+{
+	push(&b, a);
+	write(1, "pb\n", 3);
 }

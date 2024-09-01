@@ -1,31 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pslib.h                                            :+:      :+:    :+:   */
+/*   rrotate.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/30 17:52:56 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/01 17:01:46 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/01 15:52:18 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/01 16:05:51 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PSLIB_H
-# define PSLIB_H
+#include "../push_swap.h"
 
-# include <stdbool.h>
-# include <limits.h>
-# include <stdlib.h>
-
-typedef struct s_track
+void	rrotate(t_track *track)
 {
-	long			val;
-	struct s_track	*prev;
-	struct s_track	*next;
-}	t_track;
-long	ps_get_last(t_track *track);
-t_track	*ps_tracknew(long content);
-bool	ps_isnum(char c);
-void	ps_addback(t_track *track, long val);
+	long	last;
 
-#endif
+	last = ps_get_last(track);
+	while (track->prev)
+	{
+		track->val = track->prev->val;
+		track = track->prev;
+	}
+	track->val = last;
+}
+
+void	rra(t_track *a)
+{
+	rrotate(a);
+	write(1, "rra\n", 4);
+}
+
+void	rrb(t_track *b)
+{
+	rrotate(b);
+	write(1, "rrb\n", 4);
+}
+
+void	rrr(t_track *a, t_track *b)
+{
+	rrotate(a);
+	rrotate(b);
+	write(1, "rrr\n", 4);
+}

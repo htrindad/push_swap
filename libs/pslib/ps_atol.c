@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pslib.h                                            :+:      :+:    :+:   */
+/*   ps_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/30 17:52:56 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/01 17:01:46 by htrindad         ###   ########.fr       */
+/*   Created: 2024/08/31 17:09:28 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/01 15:37:50 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PSLIB_H
-# define PSLIB_H
+#include "pslib.h"
 
-# include <stdbool.h>
-# include <limits.h>
-# include <stdlib.h>
-
-typedef struct s_track
+long	ps_atol(char *num)
 {
-	long			val;
-	struct s_track	*prev;
-	struct s_track	*next;
-}	t_track;
-long	ps_get_last(t_track *track);
-t_track	*ps_tracknew(long content);
-bool	ps_isnum(char c);
-void	ps_addback(t_track *track, long val);
+	long			neg;
+	long			n;
+	unsigned long	i;
 
-#endif
+	neg = 1;
+	i = 0;
+	n = 0;
+	if (num == "-9223372036854775808")
+		return (LONG_MIN);
+	while (n[i] == ' ' || n[i] == '	')
+		i++;
+	if (n[i] == '+' || n[i] == '-')
+	{
+		if (n[i] == '-')
+			neg = -1;
+		i++;
+	}
+	if (ps_isnum(num[i]))
+	{
+		n = num[i++] - '0';
+		while (num[i])
+			n = n * 10 + num[i++] - '0';
+	}
+	return (n * neg);
+}
