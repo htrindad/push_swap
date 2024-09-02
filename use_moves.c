@@ -1,25 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_get_last.c                                      :+:      :+:    :+:   */
+/*   use_moves.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/30 18:28:47 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/02 17:41:37 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/02 17:49:50 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/02 18:13:25 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-long	*ps_get_last(t_track *track)
+void	use_s(t_track *track, bool focus)
 {
-	long	val;
+	if (!focus)
+		sa(track);
+	else
+		sb(track);
+}
 
-	while (track->next)
-		track = track->next;
-	val = track->val;
-	while (track->prev)
-		track = track->prev;
-	return (val);
+void	use_p(t_track *track, t_track *target, bool focus)
+{
+	if (focus)
+		pa(track, target);
+	else
+		pb(track, target);
+}
+
+void	use_r(t_track *track, bool focus)
+{
+	if (focus)
+		rb(track);
+	else
+		ra(track);
+}
+
+void	use_rr(t_track *track, bool focus)
+{
+	if (focus)
+		rrb(track);
+	else
+		rra(track);
 }

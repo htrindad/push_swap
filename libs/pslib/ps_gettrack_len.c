@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pslib.h                                            :+:      :+:    :+:   */
+/*   ps_gettrack_len.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/30 17:52:56 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/02 18:27:04 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/02 18:15:52 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/02 18:19:34 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PSLIB_H
-# define PSLIB_H
+#include "pslib.h"
 
-# include <stdbool.h>
-# include <limits.h>
-# include <stdlib.h>
-
-typedef struct s_track
+static void	ps_getfirst_track(t_track *track)
 {
-	long			val;
-	struct s_track	*prev;
-	struct s_track	*next;
-}	t_track;
-long	ps_get_last(t_track *track);
-t_track	*ps_tracknew(long content);
-bool	ps_isnum(char c);
-void	ps_addback(t_track *track, long val);
-int	ps_gettrack_len(t_track *track);
+	while (track->prev)
+		track = track->prev;
+}
 
-#endif
+int	ps_gettrack_len(t_track *track)
+{
+	int	i;
+
+	i = 0;
+	ps_getfirst_track(track);
+	while (track->next)
+	{
+		i++;
+		track = track->next;
+	}
+	ps_getfirst_track(track);
+	return (++i);
+}

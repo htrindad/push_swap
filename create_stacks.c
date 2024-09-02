@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:55:26 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/01 17:09:06 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:58:39 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ t_track	*initiate_a(int ac, char **av)
 	i = 1;
 	a = ps_tracknew(ps_atol(av[i++]));
 	if (a == NULL || !a->val)
+	{
+		free(a);
 		return (NULL);
+	}
 	else
 	{
 		while (i < ac)
@@ -32,7 +35,7 @@ t_track	*initiate_a(int ac, char **av)
 	}
 }
 
-t_track	*initiate_b()
+t_track	*initiate_b(void)
 {
 	t_track	*b;
 

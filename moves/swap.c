@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:36:37 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/01 16:01:36 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:03:59 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap(t_track *track)
+static void	swap(t_track *track)
 {
 	long	temp;
 

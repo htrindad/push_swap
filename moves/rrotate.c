@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 15:52:18 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/01 16:05:51 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:03:54 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rrotate(t_track *track)
+static void	rrotate(t_track *track)
 {
 	long	last;
 

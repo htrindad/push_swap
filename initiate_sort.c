@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_get_last.c                                      :+:      :+:    :+:   */
+/*   initiate_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/30 18:28:47 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/02 17:41:37 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/01 17:11:50 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/02 18:33:40 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pslib.h"
+#include "push_swap.h"
 
-long	*ps_get_last(t_track *track)
+static bool	change_focus(bool focus)
 {
-	long	val;
+	if (focus)
+		return (false);
+	return (true);
+}
 
+static int	check_current_track(t_track *track, t_track *sec, bool focus)
+{
+	long	pivot;
+	int	times;
+
+	pivot = ps_get_last(track);
+	times = 1;
 	while (track->next)
-		track = track->next;
-	val = track->val;
-	while (track->prev)
-		track = track->prev;
-	return (val);
+	{
+		if (track->val <= pivot)
+			use_p(track, sec, focus);
+	}
+	return (pivot);
+}
+
+void	initiate_sort(t_track *a, t_track *b, bool focus)
+{
+	
 }

@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:48:42 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/01 15:58:47 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:03:43 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	push(t_track **origin, t_track *target)
+static void	push(t_track **origin, t_track *target)
 {
 	target->prev = malloc(sizeof(t_track));
 	target->prev->next = target;
