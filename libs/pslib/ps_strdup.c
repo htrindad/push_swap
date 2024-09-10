@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ps_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 19:33:56 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/09 19:52:37 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/05 18:55:06 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/05 19:49:07 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "pslib.h"
 
-static void	push(t_stack **origin, t_stack *target)
+char	*ps_strdup(char const *s)
 {
-	target->back = ps_stacknew(*(origin)->val);
-	target->back->next = target;
-	target = target->back;
-	*(origin) = *(origin)->next;
-	*(origin)->back = NULL;
-}
+	char	*ptr;
+	size_t	i;
 
-void	pa(t_stack **b, t_stack *a)
-{
-	push(&b, a);
-	write(1, "pa\n", 3);
-}
-
-void	pb(t_stack **a, t_stack *a)
-{
-	push(&a, b);
-	write(1, "pb\n", 3);
+	ptr = malloc(ps_strlen(s) + 1);
+	i = 0;
+	while (s[i])
+	{
+		ptr[i] = s[i];
+		i++;
+	}
+	ptr[i] = 0;
+	return (ptr);
 }

@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ps_stacknew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 19:33:56 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/09 19:52:37 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/02 19:41:16 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/02 19:42:33 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "pslib.h"
 
-static void	push(t_stack **origin, t_stack *target)
+t_stack	*ps_stacknew(long val)
 {
-	target->back = ps_stacknew(*(origin)->val);
-	target->back->next = target;
-	target = target->back;
-	*(origin) = *(origin)->next;
-	*(origin)->back = NULL;
-}
+	t_stack	*new;
 
-void	pa(t_stack **b, t_stack *a)
-{
-	push(&b, a);
-	write(1, "pa\n", 3);
-}
-
-void	pb(t_stack **a, t_stack *a)
-{
-	push(&a, b);
-	write(1, "pb\n", 3);
+	new = malloc(sizeof(t_stack));
+	new->val = val;
+	return (new);
 }
