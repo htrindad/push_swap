@@ -1,6 +1,6 @@
 NAME = pslib.a
 
-SRC = ps_atol.c ps_split.c ps_stacknew.c ps_strdup.c ps_strlen.c ps_substr.c
+SRC = ps_atol.c ps_split.c ps_stacknew.c ps_strdup.c ps_strlen.c ps_substr.c ps_stacklen.c
 
 OBJ = $(SRC:.c=.o)
 

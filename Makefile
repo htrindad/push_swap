@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = ./moves/swap.c
+SRC = ./moves/swap.c ./moves/rotate.c ./moves/push.c ./moves/rrotate.c
 
 CFLAGS = -Wall -Werror -Wextra
 

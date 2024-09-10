@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 19:18:04 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/10 16:47:37 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/10 16:09:16 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/10 16:09:42 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "./libs/pslib/pslib.h"
-# include <unistd.h>
-# include <limits.h>
-
-void	sa(t_stack *a);
-void	sb(t_stack *b);
-void	ss(t_stack *a, t_stack *b);
-void	pa(t_stack *a);
-void	pb(t_stack *b);
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
-
-#endif
+int	main(int ac, char **av)
+{
+	return (0);
+}
