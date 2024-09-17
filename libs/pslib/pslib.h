@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 19:32:42 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/10 17:00:38 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/17 11:10:34 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_stack
 {
-	long			val;
+	int				val;
 	int				pos;
 	bool			above_median;
 	bool			cheapest;
@@ -30,7 +30,7 @@ typedef struct s_stack
 
 char	**ps_split(char *str, char sep);
 long	ps_atol(char *num);
-t_track	*ps_stacknew(long val);
+void	*ps_stacknew(int val);
 size_t	ps_strlen(char const *s);
 char	*ps_substr(char const *s);
 char	*ps_substr(char const *s, unsigned int start, unsigned int end);

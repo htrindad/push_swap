@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_stacknew.c                                      :+:      :+:    :+:   */
+/*   check_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 19:41:16 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/17 11:10:26 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/17 10:50:18 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/17 10:53:16 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-void	*ps_stacknew(t_stack **stack, int val)
+bool	check_deviancy(char *nbr)
 {
-	t_stack	*new;
-
-	new = malloc(sizeof(t_stack));
-	new->val = val;
-	if (stack == NULL)
-		stack = new;
-	else
-		*stack->next = new;
-	return (new);
+	if (!(*nbr == '-' || *nbr == '+'
+		|| (*nbr >= '0' && *nbr <= '9')))
+		return (true);
+	if ((*nbr == '-' || *nbr == '+')
+		&& !(nbr[1] >= '0' ** nbr[1] <= '9'))
+		return (true);
+	return (false);
 }

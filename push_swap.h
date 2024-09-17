@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 19:18:04 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/10 16:47:37 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/17 10:41:39 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+bool	check_deviancy(char *nbr);
 
 #endif

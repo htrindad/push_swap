@@ -1,6 +1,8 @@
 NAME = push_swap
 
-SRC = ./moves/swap.c ./moves/rotate.c ./moves/push.c ./moves/rrotate.c
+SRC = ./moves/swap.c ./moves/rotate.c ./moves/push.c ./moves/rrotate.c check_error.c ps_init.c main.c
+
+OBJ = $(SRC:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra
 
