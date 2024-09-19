@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ps_stackcreate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 16:09:16 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/10 16:09:42 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/17 14:14:15 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/17 14:45:44 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "pslib.h"
 
-int	main(int ac, char **av)
+t_stack	*ps_stackcreate(int val)
 {
-	return (0);
+	t_stack	*stack;
+
+	stack = malloc(sizeof(t_stack));
+	if (stack == NULL)
+		return (NULL);
+	stack->prev = NULL;
+	stack->next = NULL;
+	stack->val = val;
+	return (stack);
 }

@@ -5,58 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 20:06:12 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/17 11:08:46 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/17 14:09:42 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/19 17:39:46 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "pslib.h"
 
-static void	free_stack(t_stack **stack)
+static bool	check_error(char *arg)
 {
-	t_stack	*tmp;
-	t_stack *current;
-
-	if (stack == NULL)
-		return ;
-	current = *stack;
-	while (current)
+	if (!(*arg == '-' || *arg == '+' || (*arg >= '0' && *arg <= '9')))
+		return (true);
+	if ((*arg == '-' || *arg == '+') && !(*arg >= '0' && *arg <= '9'))
+		return (true);
+	while (*++arg)
 	{
-		tmp = *stack->next;
-		free(current);
-		current = tmp;
+		if (!(*arg >= '0' && *arg <= '9'))
+			return (true);
 	}
+	return (false);
 }
 
-static void	print_error()
+static void	ending(t_stack **stack, char **matrix)
 {
-	write(1, "Error\n", 6);
-	exit(0);
+	ps_freestack(stack);
+	ps_freematrix(matrix);
+	ps_quiterror();
 }
 
 void	ps_init(t_stack **a, char **av)
 {
+	size_t	i;
 	long	nbr;
-	int		i;
 
 	i = 0;
 	while (av[i])
 	{
-		if (check_deviancy(av[i]))
-		{
-			free_stack(a);
-			break;
-		}
-		else
-		{
-			nbr = ps_atol(av[i]);
-			if (nbr < INT_MIN || nbr > INT_MAX)
-			{
-				free_stack(a);
-				print_error();
-			}
-
-		}
+		nbr = ps_atol(av[i]);
+		if (check_error(av[i]) || nbr < INT_MIN || nbr > INT_MAX)
+			ending(a, av);
+		ps_stackaddback(a, ps_stackcreate((int)nbr));
 		i++;
 	}
 }

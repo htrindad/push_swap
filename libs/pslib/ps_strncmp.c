@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ps_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 13:37:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/17 16:57:30 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/17 14:39:38 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/17 14:40:12 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "pslib.h"
 
-static void	push(t_stack *origin, t_stack **target)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	(*target)->prev = origin;
-	(*target)->prev->next = *target;
-	origin = origin->next;
-	origin->prev = NULL;
-}
+	size_t	i;
 
-void	pa(t_stack **b, t_stack **a)
-{
-	push(b, &a);
-	write(1, "pa\n", 3);
-}
-
-void	pb(t_stack **a, t_stack **b)
-{
-	push(a, &b);
-	write(1, "pb\n", 3);
+	i = 0;
+	if (!n)
+		return (0);
+	while (i < n - 1 && s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ps_freestack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 13:37:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/17 16:57:30 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/19 17:11:27 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/19 17:13:47 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "pslib.h"
 
-static void	push(t_stack *origin, t_stack **target)
+void	ps_freestack(t_stack **node)
 {
-	(*target)->prev = origin;
-	(*target)->prev->next = *target;
-	origin = origin->next;
-	origin->prev = NULL;
-}
+	t_stack	*tmp;
+	t_stack	*current;
 
-void	pa(t_stack **b, t_stack **a)
-{
-	push(b, &a);
-	write(1, "pa\n", 3);
-}
-
-void	pb(t_stack **a, t_stack **b)
-{
-	push(a, &b);
-	write(1, "pb\n", 3);
+	if (node == NULL)
+		return ;
+	current = *node;
+	while (current)
+	{
+		tmp = current->next;
+		free(current);
+		current = tmp;
+	}
+	*node = NULL;
 }

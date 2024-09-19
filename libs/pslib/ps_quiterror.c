@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_stacklen.c                                      :+:      :+:    :+:   */
+/*   ps_quiterror.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 16:35:47 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/10 16:53:55 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/19 16:33:18 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/19 16:35:38 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pslib.h"
+#include <unistd.h>
 
-static void	stackfirst(t_stack *stack)
+void	ps_quiterror(void)
 {
-	while (stack->prev)
-		stack = stack->prev;
-}
-
-int	ps_stacklen(t_stack *stack)
-{
-	int	i;
-
-	stackfirst(stack);
-	i = 0;
-	while (stack->next)
-	{
-		i++;
-		stack = stack->next;
-	}
-	stackfirst(stack);
-	return (i);
+	write(1, "Error\n", 6);
+	exit(0);
 }

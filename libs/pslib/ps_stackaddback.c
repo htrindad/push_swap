@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_stacknew.c                                      :+:      :+:    :+:   */
+/*   ps_stackaddback.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 19:41:16 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/17 11:10:26 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/17 14:20:23 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/17 14:59:55 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-void	*ps_stacknew(t_stack **stack, int val)
+void	ps_stackaddback(t_stack **stack, t_stack *new)
 {
-	t_stack	*new;
+	t_stack	*last;
 
-	new = malloc(sizeof(t_stack));
-	new->val = val;
-	if (stack == NULL)
-		stack = new;
-	else
-		*stack->next = new;
-	return (new);
+	if (stack)
+	{
+		if (*stack)
+		{
+			last = ps_stacklast(*stack);
+			new->prev = last;
+			last->next = new;
+		}
+		else
+			*stack = new;
+	}
 }

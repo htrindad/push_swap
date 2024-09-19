@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_error.c                                      :+:      :+:    :+:   */
+/*   ps_stacklast.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 10:50:18 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/17 10:53:16 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/17 14:19:05 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/17 14:19:50 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-bool	check_deviancy(char *nbr)
+t_stack	*ps_stacklast(t_stack *stack)
 {
-	if (!(*nbr == '-' || *nbr == '+'
-		|| (*nbr >= '0' && *nbr <= '9')))
-		return (true);
-	if ((*nbr == '-' || *nbr == '+')
-		&& !(nbr[1] >= '0' ** nbr[1] <= '9'))
-		return (true);
-	return (false);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
