@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ps_gethighest.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 13:37:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 18:45:59 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/19 18:30:47 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/19 18:32:23 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "pslib.h"
 
-static void	push(t_stack **origin, t_stack **target)
+int	ps_gethighest(t_stack *node)
 {
-	(*target)->prev->next = *target;
-	(*target)->prev = *origin;
-	*origin = (*origin)->next;
-	(*origin)->prev = NULL;
-}
+	int	val;
 
-void	pa(t_stack **b, t_stack **a)
-{
-	push(b, a);
-	write(1, "pa\n", 3);
-}
-
-void	pb(t_stack **a, t_stack **b)
-{
-	push(a, b);
-	write(1, "pb\n", 3);
+	val = node->val;
+	node = node->next;
+	while (node)
+	{
+		if (val < node->val)
+			val = node->val;
+		node = node->next;
+	}
+	return (val);
 }

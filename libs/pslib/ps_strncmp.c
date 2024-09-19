@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:39:38 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/17 14:40:12 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:57:45 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ps_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 

@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:36:10 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 17:57:30 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:56:05 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdbool.h>
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
 
 typedef struct s_stack
 {
@@ -41,5 +42,9 @@ int		ps_strncmp(const char *s1, const char *s2, size_t n);
 void	ps_quiterror(void);
 void	ps_freestack(t_stack **node);
 void	ps_setindex(t_stack *stack);
+int		ps_countnode(t_stack *stack);
+int		ps_gethighest(t_stack *node);
+void	ps_freematrix(char **av);
+
 
 #endif

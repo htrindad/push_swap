@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ps_countnode.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 13:37:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 18:45:59 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/19 18:03:45 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/19 18:09:15 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "pslib.h"
 
-static void	push(t_stack **origin, t_stack **target)
+int	ps_countnode(t_stack *stack)
 {
-	(*target)->prev->next = *target;
-	(*target)->prev = *origin;
-	*origin = (*origin)->next;
-	(*origin)->prev = NULL;
-}
+	int	i;
 
-void	pa(t_stack **b, t_stack **a)
-{
-	push(b, a);
-	write(1, "pa\n", 3);
-}
-
-void	pb(t_stack **a, t_stack **b)
-{
-	push(a, b);
-	write(1, "pb\n", 3);
+	i = 0;
+	while (stack)
+	{
+		i++;
+		stack = stack->next;
+	}
+	return (i);
 }
