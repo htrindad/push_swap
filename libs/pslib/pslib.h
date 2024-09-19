@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:36:10 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 18:56:05 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:25:51 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	ps_setindex(t_stack *stack);
 int		ps_countnode(t_stack *stack);
 int		ps_gethighest(t_stack *node);
 void	ps_freematrix(char **av);
-
+char	*ps_substr(char const *s, unsigned int start, size_t len);
+void	*ps_memcpy(void *dst, const void *src, size_t n);
+char	*ps_strjoin(char *s1, char const *s2);
 
 #endif
