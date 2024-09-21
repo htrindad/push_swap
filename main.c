@@ -6,32 +6,48 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:56:29 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 19:31:38 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/21 15:50:15 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int	get_highest(t_stack *a)
+{
+	int	highest;
+
+	highest = a->val;
+	while (a)
+	{
+		if (a->val > highest)
+			highest = a->val;
+		a = a->next;
+	}
+	return (highest);
+}
+
 static char	**cut(char **arg)
 {
-	int		i;
-	char	*temp;
-	char	*temp;
-	char	**res;
+	char	*tmp;
+	char	**comp;
+	size_t	i;
 
 	i = 0;
-	temp = malloc(2);
+	tmp = ps_strdup(arg[i++]);
 	while (arg[i])
 	{
-		temp2 = ps_strjoin(temp, arg[i]);
-		free(temp);
-		temp = ps_strjoin(temp2, " ");
-		free(temp2);
-		i++;
+		tmp = ps_strjoin(tmp, " ");
+		tmp = ps_strjoin(tmp, arg[i++]);
 	}
-	res = ps_split(temp, ' ');
-	free(temp);
-	return (res);
+	comp = ps_split(tmp, ' ');
+	free(tmp);
+	return (comp);
+}
+
+static int	final(t_stack **a, char **args)
+{
+	normal_ending(a, args);
+	return (0);
 }
 
 int	main(int ac, char **av)
@@ -40,6 +56,7 @@ int	main(int ac, char **av)
 	t_stack	*b;
 	char	**args;
 	int		count;
+	int		highest;
 
 	a = NULL;
 	b = NULL;
@@ -48,10 +65,11 @@ int	main(int ac, char **av)
 	if (ac == 2)
 		args = ps_split(av[1], ' ');
 	else
-		args = cut(av);
-	ps_init(&a, av + 1);
+		args = cut(av + 1);
+	ps_init(&a, args);
 	count = ps_countnode(a);
+	highest = get_highest(a);
 	if (count == 3)
-		small_sort(&a);
-	return (0);
+		small_sort(&a, highest);
+	return (final(&a, args));
 }

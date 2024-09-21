@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 17:09:28 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/17 14:42:50 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/21 14:02:22 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ long	ps_atol(char *num)
 	neg = 1;
 	i = 0;
 	n = 0;
-	if (!ps_strncmp(num, "-9223372036854775808", ps_strlen(num)))
+	if (!ps_strncmp(num, "-9223372036854775808", 20))
 		return (LONG_MIN);
 	while (num[i] == ' ' || num[i] == '	')
 		i++;

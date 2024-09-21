@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:51:41 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 18:42:53 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/21 16:28:22 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 void	ps_init(t_stack **a, char **av);
-void	small_sort(t_stack **a);
+void	small_sort(t_stack **a, int highest);
+void	ending(t_stack **stack, char **matrix);
+void	normal_ending(t_stack **stack, char **matrix);
+int		*get_vals(t_stack *stack);
 
 #endif

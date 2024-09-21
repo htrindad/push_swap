@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:09:42 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 18:46:29 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/21 15:17:38 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ static bool	check_error(char *arg)
 			return (true);
 	}
 	return (false);
-}
-
-static void	ending(t_stack **stack, char **matrix)
-{
-	ps_freestack(stack);
-	ps_freematrix(matrix);
-	ps_quiterror();
 }
 
 void	ps_init(t_stack **a, char **av)

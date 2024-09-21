@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_freestack.c                                     :+:      :+:    :+:   */
+/*   get_vals.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 17:11:27 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/21 16:23:02 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/21 16:26:26 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/21 16:31:57 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pslib.h"
+#include "push_swap.h"
 
-void	ps_freestack(t_stack **node)
+int	*get_vals(t_stack *stack)
 {
-	t_stack	*tmp;
-	t_stack	*current;
+	int	*vals;
+	int	i;
 
-	if (node == NULL)
-		return ;
-	current = *node;
-	while (current)
+	i = 0;
+	vals = malloc(ps_countnode(stack) * 4);
+	while (a)
 	{
-		tmp = current;
-		current = current->next;
-		free(tmp);
+		vals[i] = a->val;
+		i++;
+		a = a->next;
 	}
-	*node = NULL;
+	vals[i] = 0;
+	return (vals);
 }

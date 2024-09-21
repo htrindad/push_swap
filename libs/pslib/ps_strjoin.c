@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 19:14:32 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 19:25:45 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/21 14:29:38 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-char	*ps_strjoin(char *s1, char const *s2)
+char	*ps_strjoin(char *dest, char const *src)
 {
 	char	*str;
 	size_t	i;
@@ -20,7 +20,7 @@ char	*ps_strjoin(char *s1, char const *s2)
 
 	if (!dest || !src)
 		return (NULL);
-	str = malloc(ft_strlen(dest) + ft_strlen(src) + 1);
+	str = malloc(ps_strlen(dest) + ps_strlen(src) + 1);
 	if (str == NULL)
 		return (NULL);
 	i = 0;

@@ -17,6 +17,8 @@ void	ps_freematrix(char **av)
 	size_t	i;
 
 	i = 0;
-	while (av[i])
+	while (av && av[i])
 		free(av[i++]);
+	if (av)
+		free(av);
 }

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_freestack.c                                     :+:      :+:    :+:   */
+/*   ending.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 17:11:27 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/21 16:23:02 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/21 15:17:22 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/21 16:16:22 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pslib.h"
+#include "push_swap.h"
 
-void	ps_freestack(t_stack **node)
+void	normal_ending(t_stack **stack, char **matrix)
 {
-	t_stack	*tmp;
-	t_stack	*current;
+	if (stack)
+		ps_freestack(stack);
+	if (matrix)
+		ps_freematrix(matrix);
+}
 
-	if (node == NULL)
-		return ;
-	current = *node;
-	while (current)
-	{
-		tmp = current;
-		current = current->next;
-		free(tmp);
-	}
-	*node = NULL;
+void	ending(t_stack **stack, char **matrix)
+{
+	ps_freestack(stack);
+	ps_freematrix(matrix);
+	ps_quiterror();
 }

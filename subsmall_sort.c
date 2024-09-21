@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_freestack.c                                     :+:      :+:    :+:   */
+/*   subsmall_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 17:11:27 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/21 16:23:02 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/21 16:25:10 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/21 16:34:06 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pslib.h"
+#include "push_swap.h"
 
-void	ps_freestack(t_stack **node)
+static void	sorting(t_stack **a, int *vals, int highest)
 {
-	t_stack	*tmp;
-	t_stack	*current;
 
-	if (node == NULL)
-		return ;
-	current = *node;
-	while (current)
-	{
-		tmp = current;
-		current = current->next;
-		free(tmp);
-	}
-	*node = NULL;
+}
+
+void	subsmall_sort(t_stack **a, int highest)
+{
+	int	*vals;
+
+	vals = get_vals(*a);
 }
