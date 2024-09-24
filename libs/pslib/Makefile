@@ -1,7 +1,7 @@
 NAME = pslib.a
 
 SRC = ps_strlen.c ps_atol.c ps_strdup.c ps_substr.c ps_split.c ps_stackcreate.c ps_strncmp.c ps_stackaddback.c ps_stacklast.c ps_quiterror.c \
-      ps_freestack.c ps_freematrix.c ps_setindex.c ps_countnode.c ps_gethighest.c ps_substr.c ps_strjoin.c ps_memcpy.c
+      ps_freestack.c ps_freematrix.c ps_setindex.c ps_countnode.c ps_gethighest.c ps_substr.c ps_strjoin.c ps_memcpy.c ps_sorted.c ps_getlowest.c
 
 OBJ = $(SRC:.c=.o)
 

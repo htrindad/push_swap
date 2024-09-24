@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_vals.c                                         :+:      :+:    :+:   */
+/*   ps_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 16:26:26 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/24 16:57:19 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/24 16:44:54 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/24 17:20:21 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "pslib.h"
 
-int	*get_vals(t_stack *stack)
+bool	ps_sorted(t_stack *node)
 {
-	int	*vals;
-	int	i;
+	t_stack	*prev;
 
-	i = 0;
-	vals = malloc(ps_countnode(stack) * 4);
-	while (stack)
+	prev = node;
+	node = node->next;
+	while (node)
 	{
-		vals[i] = stack->val;
-		i++;
-		stack = stack->next;
+		if (prev->val > node->val)
+			return (false);
+		node = node->next;
 	}
-	vals[i] = 0;
-	return (vals);
+	return (true);
 }

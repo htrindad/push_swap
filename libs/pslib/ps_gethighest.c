@@ -6,23 +6,22 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:30:47 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 18:32:23 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:31:49 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-int	ps_gethighest(t_stack *node)
+t_stack	*ps_gethighest(t_stack *node)
 {
-	int	val;
+	t_stack	*highest;
 
-	val = node->val;
-	node = node->next;
+	highest = node;
 	while (node)
 	{
-		if (val < node->val)
-			val = node->val;
-		node = node->next;
+		if (highest->val < node->val)
+			highest = node;
+		node = node->val;
 	}
-	return (val);
+	return (highest);
 }

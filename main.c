@@ -6,11 +6,33 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:56:29 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/21 15:50:15 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:14:55 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	checkmax(char const *str)
+{
+	size_t	i;
+	long	token;
+
+	token = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == ' ' || str[i] == '	')
+		{
+			token++;
+			while (str[i] == ' ' || str[i] == '	')
+				i++;
+			i--;
+		}
+		i++;
+	}
+	if (token > INT_MAX)
+		ending();
+}
 
 static int	get_highest(t_stack *a)
 {
@@ -69,7 +91,7 @@ int	main(int ac, char **av)
 	ps_init(&a, args);
 	count = ps_countnode(a);
 	highest = get_highest(a);
-	if (count == 3)
+	if (count < 6)
 		small_sort(&a, highest);
 	return (final(&a, args));
 }

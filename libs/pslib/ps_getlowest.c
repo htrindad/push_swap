@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_vals.c                                         :+:      :+:    :+:   */
+/*   ps_getlowest.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 16:26:26 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/24 16:57:19 by htrindad         ###   ########.fr       */
+/*   Created: 2024/09/24 16:39:31 by htrindad          #+#    #+#             */
+/*   Updated: 2024/09/24 17:24:51 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "pslib.h"
 
-int	*get_vals(t_stack *stack)
+t_stack	*ps_getlowest(t_stack *node)
 {
-	int	*vals;
-	int	i;
+	t_stack	*lowest;
 
-	i = 0;
-	vals = malloc(ps_countnode(stack) * 4);
-	while (stack)
+	lowest = node;
+	while (node)
 	{
-		vals[i] = stack->val;
-		i++;
-		stack = stack->next;
+		if (node->val < lowest->val)
+			lowest = node;
+		node = node->next;
 	}
-	vals[i] = 0;
-	return (vals);
+	return (lowest);
 }
