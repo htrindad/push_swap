@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_sorted.c                                        :+:      :+:    :+:   */
+/*   ps_stackaddfront.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 16:44:54 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/01 16:32:38 by htrindad         ###   ########.fr       */
+/*   Created: 2024/10/01 15:46:12 by htrindad          #+#    #+#             */
+/*   Updated: 2024/10/01 15:52:42 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-bool	ps_sorted(t_stack *node)
+void	ps_stackaddfront(t_stack **stack, t_stack *new)
 {
-	t_stack	*prev;
-
-	prev = node;
-	node = node->next;
-	while (node)
+	if (stack)
 	{
-		if (prev->val > node->val)
-			return (false);
-		node = node->next;
-		prev = prev->next;
+		if (*stack)
+		{
+			(*stack)->prev = malloc(sizeof(t_stack));
+			if (!(*stack)->prev)
+				return ;
+			new->next = *stack;
+			(*stack)->prev = new;
+			(*stack)->prev->next = *stack;
+		}
 	}
-	return (true);
 }

@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:36:10 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/24 17:33:39 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:50:23 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ char	*ps_strjoin(char *s1, char const *s2);
 bool	ps_sorted(t_stack *node);
 int		ps_strncmp(const char *s1, const char *s2, size_t n);
 int		ps_countnode(t_stack *stack);
+int		ps_highestval(t_stack *node);
+void	ps_stackaddfront(t_stack **stack, t_stack *new);
 
 #endif

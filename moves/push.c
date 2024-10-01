@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:37:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 18:45:59 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:06:52 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,26 @@
 
 static void	push(t_stack **origin, t_stack **target)
 {
-	(*target)->prev->next = *target;
-	(*target)->prev = *origin;
+	t_stack	*tmp;
+
+	if (!*origin)
+		return ;
+	tmp = *origin;
 	*origin = (*origin)->next;
-	(*origin)->prev = NULL;
+	if (*origin)
+		(*origin)->prev = NULL;
+	tmp->prev = NULL;
+	if (!*target)
+	{
+		*target = tmp;
+		tmp->next = NULL;
+	}
+	else
+	{
+		tmp->next = *target;
+		*target = tmp;
+		tmp->next->prev = tmp;
+	}
 }
 
 void	pa(t_stack **b, t_stack **a)

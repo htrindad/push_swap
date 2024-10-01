@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:30:47 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/24 17:31:49 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/01 14:08:35 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	*ps_gethighest(t_stack *node)
 	{
 		if (highest->val < node->val)
 			highest = node;
-		node = node->val;
+		node = node->next;
 	}
 	return (highest);
 }
