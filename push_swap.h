@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:51:41 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/01 15:24:14 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:16:22 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ void	ending(t_stack **stack, char **matrix);
 void	normal_ending(t_stack **stack, char **matrix);
 int		*get_vals(t_stack *stack);
 void	subsmall_sort(t_stack **a, t_stack **b);
+void	turk(t_stack **a, t_stack **b);
 
 #endif

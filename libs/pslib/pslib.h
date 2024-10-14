@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:36:10 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/14 16:54:04 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:03:27 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 	int				index;
 	int				push_cost;
 	bool			am;
+	bool			cheapest;
 	struct s_stack	*target;
 	struct s_stack	*prev;
 	struct s_stack	*next;
@@ -54,5 +55,6 @@ int		ps_highestval(t_stack *node);
 void	ps_stackaddfront(t_stack **stack, t_stack *new);
 void	ps_set_median(t_stack **a);
 void	ps_reset(t_stack **stack);
+t_stack	*ps_getcheapest(t_stack *node);
 
 #endif
