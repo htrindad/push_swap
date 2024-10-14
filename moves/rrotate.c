@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:48:29 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/19 16:29:05 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:59:52 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ static void	rrotate(t_stack **stack)
 void	rra(t_stack **a)
 {
 	rrotate(a);
-	write(1, "ra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **b)
 {
 	rrotate(b);
-	write(1, "rb\n", 3);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **a, t_stack **b)

@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:27:44 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/01 16:42:07 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:04:23 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,14 @@ void	subsmall_sort(t_stack **a, t_stack **b)
 		{
 			min = ps_getlowest(*a);
 			while (*a != min)
-				ra(a);
+			{
+				if (min->am)
+					rra(a);
+				else
+					ra(a);
+			}
 			pb(a, b);
+			ps_reset(a);
 		}
 		small_sort(a, ps_highestval(*a));
 		while (*b)

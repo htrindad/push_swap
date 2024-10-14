@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_setindex.c                                      :+:      :+:    :+:   */
+/*   ps_set_median.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 17:55:36 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/14 16:49:12 by htrindad         ###   ########.fr       */
+/*   Created: 2024/10/14 16:31:38 by htrindad          #+#    #+#             */
+/*   Updated: 2024/10/14 16:50:11 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-void	ps_setindex(t_stack **stack)
+void	ps_set_median(t_stack **a)
 {
-	int		i;
-	t_stack	*tmp;
+	const int	max = ps_countnode(*a);
+	t_stack		*tmp;
 
-	i = 0;
-	tmp = *stack;
+	tmp = *a;
 	while (tmp)
 	{
-		tmp->index = i;
+		if (tmp->index > max / 2)
+			tmp->am = true;
+		else
+			tmp->am = false;
 		tmp = tmp->next;
-		i++;
 	}
 }
