@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:56:29 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/01 15:24:22 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:49:08 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,7 @@ int	main(int ac, char **av)
 		small_sort(&a, highest);
 	else if (count < 6)
 		subsmall_sort(&a, &b);
+	else
+		turk(&a, &b);
 	return (final(&a, args));
 }

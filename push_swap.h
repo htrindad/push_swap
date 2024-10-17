@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:51:41 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/16 15:23:40 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:46:43 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,10 @@ void	pfp(t_stack **node, t_stack *top_node, bool way);
 void	rotate_both(t_stack **a, t_stack **b, t_stack *cn);
 void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cn);
 void	set_target_a(t_stack *a, t_stack *b);
+void	ca_a(t_stack *a, t_stack *b);
+void	set_target_b(t_stack *a, t_stack *b);
+void	mot(t_stack **a);
+void	move_a_to_b(t_stack **a, t_stack **b);
+void	move_b_to_a(t_stack **a, t_stack **b);
 
 #endif

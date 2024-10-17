@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:32:47 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/14 17:52:42 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:51:46 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,58 +32,24 @@ static void	sc(t_stack *stack) //set cheapest
 	cn->cheapest = true;
 }
 
-static void	ca(t_stack *a, t_stack *b) //cost analysis
-{
-	int	len_a;
-	int	len_b;
-
-	len_a = ps_countnode(a);
-	len_b = ps_countnode(b);
-	while (a)
-	{
-		a->push_cost = a->index;
-		if (!a->am)
-			a->push_cost = len_a - a->index;
-		if (a->target->am)
-			a->push_cost += a->target->index;
-		else
-			a->push_cost += len_b - a->target->index;
-		a = a->next;
-	}
-}
-
-static void	set_target(t_stack *a, t_stack *b)
-{
-	t_stack	*c_b;
-	t_stack	*target;
-	long	bmi;
-
-	while (a)
-	{
-		bmi = LONG_MIN;
-		c_b = b;
-		while (c_b)
-		{
-			if (c_b->val < a->val && c_b->val > bmi)
-			{
-				bmi = c_b->val;
-				target = c_b;
-			}
-			c_b = c_b->next;
-		}
-		if (bmi == LONG_MIN)
-			a->target = ps_gethighest(b);
-		else
-			a->target = target;
-		a = a->next;
-	}
-}
-
-static void	init_nodes(t_stack **a, t_stack **b)
+static void	init_indexes(t_stack **a, t_stack **b)
 {
 	ps_reset(a);
 	ps_reset(b);
-	set_target(*a, *b);
+}
+
+static void	init_nodes_a(t_stack **a, t_stack **b)
+{
+	init_indexes(a, b);
+	set_target_a(*a, *b);
+	ca_a(*a, *b);
+	sc(*a);
+}
+
+static void	init_nodes_b(t_stack **a, t_stack **b)
+{
+	init_indexes(a, b);
+	set_target_b(*a, *b);
 }
 
 void	turk(t_stack **a, t_stack **b)
@@ -97,6 +63,15 @@ void	turk(t_stack **a, t_stack **b)
 		pb(a, b);
 	while (len-- > 3 && !ps_sorted(*a))
 	{
-		init_nodes(a, b);
+		init_nodes_a(a, b);
+		move_a_to_b(a, b);
 	}
+	small_sort(a, ps_highestval(*a));
+	while (*b)
+	{
+		init_nodes_b(a, b);
+		move_b_to_a(a, b);
+	}
+	ps_reset(a);
+	mot(a);
 }

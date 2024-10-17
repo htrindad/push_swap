@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_getcheapest.c                                   :+:      :+:    :+:   */
+/*   mot.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 18:01:38 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/17 17:45:46 by htrindad         ###   ########.fr       */
+/*   Created: 2024/10/17 17:36:46 by htrindad          #+#    #+#             */
+/*   Updated: 2024/10/17 17:39:21 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pslib.h"
+#include "push_swap.h"
 
-t_stack	*ps_getcheapest(t_stack *node)
+void	mot(t_stack **a)
 {
-	if (!node)
-		return (NULL);
-	while (node)
+	while ((*a)->val != ps_getlowest(*a)->val)
 	{
-		if (node->cheapest)
-			return (node);
-		node = node->next;
+		if (ps_getlowest(*a)->am)
+			ra(a);
+		else
+			rra(a);
 	}
-	return (NULL);
 }

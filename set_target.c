@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:22:54 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/16 15:30:09 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:40:52 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	set_target_a(t_stack *a, t_stack *b)
 void	set_target_b(t_stack *a, t_stack *b)
 {
 	t_stack	*c_a;
-	t_stack *target;
+	t_stack	*target;
 	long	bmi;
 
 	while (b)
@@ -61,7 +61,7 @@ void	set_target_b(t_stack *a, t_stack *b)
 		if (bmi == LONG_MAX)
 			b->target = ps_getlowest(a);
 		else
-			b->target = target
+			b->target = target;
 		b = b->next;
 	}
 }
