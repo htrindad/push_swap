@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:56:29 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/17 17:49:08 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/18 18:02:29 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	main(int ac, char **av)
 	t_stack	*b;
 	char	**args;
 	int		count;
-	int		highest;
 
 	a = NULL;
 	b = NULL;
@@ -54,9 +53,10 @@ int	main(int ac, char **av)
 		args = cut(av + 1);
 	ps_init(&a, args);
 	count = ps_countnode(a);
-	highest = ps_highestval(a);
+	if (ps_duplicate(a))
+		return (ps_quiterror());
 	if (count == 3)
-		small_sort(&a, highest);
+		small_sort(&a, ps_highestval(a));
 	else if (count < 6)
 		subsmall_sort(&a, &b);
 	else
