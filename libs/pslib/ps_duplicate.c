@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:53:14 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/18 17:56:29 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/18 18:34:05 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 bool	ps_duplicate(t_stack *node)
 {
-	const t_stack	*first = node;
-	t_stack		*tmp;
+	t_stack	*first;
+	t_stack	*tmp;
 
+	first = node;
 	while (node)
 	{
 		tmp = first;
@@ -26,6 +27,7 @@ bool	ps_duplicate(t_stack *node)
 				tmp = tmp->next;
 			if (tmp && tmp->val == node->val)
 				return (true);
+			tmp = tmp->next;
 		}
 		node = node->next;
 	}

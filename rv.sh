@@ -1,1 +1,0 @@
-./psv/build/bin/visualizer

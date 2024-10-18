@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 12:56:29 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/18 18:02:29 by htrindad         ###   ########.fr       */
+/*   Created: 2024/10/18 18:31:03 by htrindad          #+#    #+#             */
+/*   Updated: 2024/10/18 18:32:03 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	main(int ac, char **av)
 	t_stack	*b;
 	char	**args;
 	int		count;
+	int		highest;
 
 	a = NULL;
 	b = NULL;
@@ -53,10 +54,11 @@ int	main(int ac, char **av)
 		args = cut(av + 1);
 	ps_init(&a, args);
 	count = ps_countnode(a);
+	highest = ps_highestval(a);
 	if (ps_duplicate(a))
-		return (ps_quiterror());
+		ending(&a, args);
 	if (count == 3)
-		small_sort(&a, ps_highestval(a));
+		small_sort(&a, highest);
 	else if (count < 6)
 		subsmall_sort(&a, &b);
 	else
