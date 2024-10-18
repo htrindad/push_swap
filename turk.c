@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:32:47 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/17 17:51:46 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/18 16:43:35 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static void	sc(t_stack *stack) //set cheapest
 
 static void	init_indexes(t_stack **a, t_stack **b)
 {
-	ps_reset(a);
-	ps_reset(b);
+	ps_reset(*a);
+	ps_reset(*b);
 }
 
 static void	init_nodes_a(t_stack **a, t_stack **b)
@@ -72,6 +72,6 @@ void	turk(t_stack **a, t_stack **b)
 		init_nodes_b(a, b);
 		move_b_to_a(a, b);
 	}
-	ps_reset(a);
+	ps_reset(*a);
 	mot(a);
 }

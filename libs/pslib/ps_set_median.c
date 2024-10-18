@@ -6,18 +6,18 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 16:31:38 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/14 16:50:11 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/18 16:40:51 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-void	ps_set_median(t_stack **a)
+void	ps_set_median(t_stack *a)
 {
-	const int	max = ps_countnode(*a);
+	const int	max = ps_countnode(a);
 	t_stack		*tmp;
 
-	tmp = *a;
+	tmp = a;
 	while (tmp)
 	{
 		if (tmp->index > max / 2)
