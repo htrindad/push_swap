@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:51:41 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/17 17:46:43 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/27 18:10:38 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,7 @@ void	normal_ending(t_stack **stack, char **matrix);
 int		*get_vals(t_stack *stack);
 void	subsmall_sort(t_stack **a, t_stack **b);
 void	turk(t_stack **a, t_stack **b);
-void	pfp(t_stack **node, t_stack *top_node, bool way);
-void	rotate_both(t_stack **a, t_stack **b, t_stack *cn);
-void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cn);
-void	set_target_a(t_stack *a, t_stack *b);
-void	ca_a(t_stack *a, t_stack *b);
-void	set_target_b(t_stack *a, t_stack *b);
-void	mot(t_stack **a);
-void	move_a_to_b(t_stack **a, t_stack **b);
-void	move_b_to_a(t_stack **a, t_stack **b);
+void	init_stack(t_stack *a, t_stack *b);
+void	move_nodes(t_stack **a, t_stack **b);
 
 #endif

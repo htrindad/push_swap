@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:27:44 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/18 16:42:36 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/27 18:47:52 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	subsmall_sort(t_stack **a, t_stack **b)
 					ra(a);
 			}
 			pb(a, b);
-			ps_reset(*a);
+			ps_setindex(*a);
 		}
 		small_sort(a, ps_highestval(*a));
 		while (*b)

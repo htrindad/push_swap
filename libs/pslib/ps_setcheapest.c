@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_reset.c                                         :+:      :+:    :+:   */
+/*   ps_setcheapest.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 16:53:07 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/18 16:38:31 by htrindad         ###   ########.fr       */
+/*   Created: 2024/10/27 17:32:31 by htrindad          #+#    #+#             */
+/*   Updated: 2024/10/27 18:18:44 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-void	ps_reset(t_stack *stack)
+void	ps_setcheapest(t_stack *node)
 {
-	ps_setindex(stack);
-	ps_set_median(stack);
+	long	bmi;
+	t_stack	*bmn;
+
+	if (node == NULL)
+		return ;
+	bmi = LONG_MAX;
+	while (node)
+	{
+		if (node->push_cost < bmi)
+		{
+			bmi = node->push_cost;
+			bmn = node;
+		}
+		node = node->next;
+	}
+	bmn->cheapest = true;
 }

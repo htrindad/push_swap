@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:09:42 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/18 17:37:20 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/27 18:47:40 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void	ps_init(t_stack **a, char **av)
 		ps_stackaddback(a, ps_stackcreate((int)nbr));
 		i++;
 	}
-	ps_reset(*a);
+	ps_setindex(*a);
 }

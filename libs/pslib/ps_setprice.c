@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_b_to_a.c                                      :+:      :+:    :+:   */
+/*   ps_setprice.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 15:18:57 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/16 15:21:23 by htrindad         ###   ########.fr       */
+/*   Created: 2024/10/27 16:58:54 by htrindad          #+#    #+#             */
+/*   Updated: 2024/10/27 17:04:36 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "pslib.h"
 
-void	move_b_to_a(t_stack **a, t_stack **b)
+void	ps_setprice(t_stack *a, t_stack *b)
 {
-	pfp(a, (*b)->target, false);
-	pa(b, a);
+	int	la;
+	int	lb;
+
+	la = ps_countnode(a);
+	lb = ps_countnode(b);
+	while (b)
+	{
+		b->push_cost = b->index;
+		if (!b->am)
+			b->push_cost = lb - b->index;
+		if (b->am)
+			b->push_cost += b->target->index;
+		else
+			b->push_cost += la - b->target->index;
+		b = b->next;
+	}
 }

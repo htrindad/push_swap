@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 18:31:03 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/18 18:32:03 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/27 18:15:00 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ static int	final(t_stack **a, char **args)
 	return (0);
 }
 
+static void	long_sort(int count, t_stack **a, t_stack **b)
+{
+	if (count < 120)
+		turk(a, b);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
@@ -62,6 +68,6 @@ int	main(int ac, char **av)
 	else if (count < 6)
 		subsmall_sort(&a, &b);
 	else
-		turk(&a, &b);
+		long_sort(count, &a, &b);
 	return (final(&a, args));
 }
