@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:58:54 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/27 17:04:36 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/29 16:54:54 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ps_setprice(t_stack *a, t_stack *b)
 		b->push_cost = b->index;
 		if (!b->am)
 			b->push_cost = lb - b->index;
-		if (b->am)
+		if (b->target->am)
 			b->push_cost += b->target->index;
 		else
 			b->push_cost += la - b->target->index;

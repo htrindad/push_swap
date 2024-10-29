@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:27:44 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/28 19:30:16 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/29 17:43:22 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,21 @@ void	small_sort(t_stack **a, int highest)
 	}
 }
 
+static void	seg_min(t_stack **a, t_stack **b, t_stack *min)
+{
+	if (*a != min)
+	{
+		while (*a != min)
+		{
+			if (min->am)
+				ra(a);
+			else
+				rra(a);
+		}
+	}
+	pb(a, b);
+}
+
 void	subsmall_sort(t_stack **a, t_stack **b)
 {
 	t_stack	*min;
@@ -41,17 +56,11 @@ void	subsmall_sort(t_stack **a, t_stack **b)
 	{
 		while (ps_countnode(*a) > 3)
 		{
+			init_stack(*a, *b);
 			min = ps_getlowest(*a);
-			while (*a != min)
-			{
-				if (min->am)
-					rra(a);
-				else
-					ra(a);
-			}
-			pb(a, b);
-			ps_setindex(*a);
+			seg_min(a, b, min);
 		}
+		init_stack(*a, *b);
 		small_sort(a, ps_highestval(*a));
 		while (*b)
 			pa(b, a);
