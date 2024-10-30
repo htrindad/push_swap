@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:36:10 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/27 18:54:06 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/30 13:30:45 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stack
 	int				val;
 	int				index;
 	int				push_cost;
+	int				chunk;
 	bool			am;
 	bool			cheapest;
 	struct s_stack	*target;

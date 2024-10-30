@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:53:14 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/26 16:24:52 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/30 15:12:00 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ bool	ps_duplicate(t_stack *node)
 			if (tmp->index == node->index && tmp->next)
 				tmp = tmp->next;
 			if (!tmp->next)
-				break;
+				break ;
 			if (tmp && tmp->val == node->val)
 				return (true);
 			tmp = tmp->next;

@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:54:30 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/27 18:47:25 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/30 15:16:43 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
+void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while (*a != cheapest->target && *b != cheapest)
 		rr(a, b);
@@ -20,7 +20,7 @@ static void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 	ps_setindex(*b);
 }
 
-static void	rrotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
+void	rrotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while (*a != cheapest->target && *b != cheapest)
 		rrr(a, b);
@@ -28,7 +28,7 @@ static void	rrotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 	ps_setindex(*b);
 }
 
-static void	finish_rot(t_stack **node, t_stack *top, bool stack)
+void	finish_rot(t_stack **node, t_stack *top, bool stack)
 {
 	while (*node != top)
 	{

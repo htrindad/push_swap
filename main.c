@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 18:31:03 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/29 17:53:31 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/30 18:30:31 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,12 @@ static int	final(t_stack **a, char **args)
 	return (0);
 }
 
-//static void	chunks(t_stack **a, t_stack**b)
-//{
-//	
-//}
-//
-//static void	long_sort(int count, t_stack **a, t_stack **b)
-//{
-//	if (count < 120)
-//		turk(a, b);
-//	else
-//		chunks(a, b);
-//}
-
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
 	char	**args;
 	int		count;
-	int		highest;
 
 	a = NULL;
 	b = NULL;
@@ -67,11 +53,10 @@ int	main(int ac, char **av)
 		args = cut(av + 1);
 	ps_init(&a, args);
 	count = ps_countnode(a);
-	highest = ps_highestval(a);
 	if (ps_duplicate(a))
 		ending(&a, args);
 	if (count == 3)
-		small_sort(&a, highest);
+		small_sort(&a, ps_highestval(a));
 	else if (count < 6)
 		subsmall_sort(&a, &b);
 	else

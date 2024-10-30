@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:56:58 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/27 18:48:16 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/10/30 17:36:36 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ static void	set_target(t_stack *a, t_stack *b)
 
 void	init_stack(t_stack *a, t_stack *b)
 {
-	set_target(a, b);
 	ps_setindex(a);
 	ps_setindex(b);
+	set_target(a, b);
 	ps_setprice(a, b);
 	ps_setcheapest(b);
 }
