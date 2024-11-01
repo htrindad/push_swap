@@ -2,3 +2,4 @@
 ./remove_tmp.sh
 ./rv.sh
 ./psv/
+./checker_linux
