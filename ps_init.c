@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:09:42 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/29 17:27:07 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/04 19:58:31 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static bool	check_error(char *arg)
 {
 	if (!(*arg == '-' || *arg == '+' || (*arg >= '0' && *arg <= '9')))
 		return (true);
-	if ((*arg == '-' || *arg == '+') && !(*arg >= '0' && *arg <= '9'))
+	if ((*arg == '-' || *arg == '+') && !(arg[1] >= '0' && arg[1] <= '9'))
 		return (true);
 	while (*++arg)
 		if (!(*arg >= '0' && *arg <= '9'))
