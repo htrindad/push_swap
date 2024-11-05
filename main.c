@@ -6,11 +6,22 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 18:31:03 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/04 20:06:36 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/05 14:38:05 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static bool	cem(int ac, char **av)
+{
+	int	i;
+
+	i = 0;
+	while (i < ac)
+		if (!av[i++][0])
+			ps_quiterror();
+	return (false);
+}
 
 static char	**cut(char **arg)
 {
@@ -45,7 +56,7 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	if (ac == 1 || (!av[1][0]))
+	if (ac == 1 || (!av[1][0]) || cem(ac, av))
 		return (-1);
 	if (ac == 2)
 		args = ps_split(av[1], ' ');
