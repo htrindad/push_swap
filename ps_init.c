@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:09:42 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/04 19:58:31 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/05 14:57:29 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	ps_init(t_stack **a, char **av)
 	while (av[i])
 	{
 		nbr = ps_atol(av[i]);
-		if (check_error(av[i]) || nbr < INT_MIN || nbr > INT_MAX)
+		if (check_error(av[i]) || nbr < INT_MIN || nbr > INT_MAX
+			|| ps_nlen(av[i]) > 10 || ps_isdigit(av[i]))
 			ending(a, av);
 		ps_stackaddback(a, ps_stackcreate((int)nbr));
 		i++;
