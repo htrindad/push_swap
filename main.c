@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 18:31:03 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/05 14:38:05 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:33:36 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ static bool	cem(int ac, char **av)
 		if (!av[i++][0])
 			ps_quiterror();
 	return (false);
+}
+
+static void	qic(char **args)
+{
+	if (args == NULL)
+		ps_quiterror();
 }
 
 static char	**cut(char **arg)
@@ -62,6 +68,7 @@ int	main(int ac, char **av)
 		args = ps_split(av[1], ' ');
 	else
 		args = cut(av + 1);
+	qic(args);
 	ps_init(&a, args);
 	count = ps_countnode(a);
 	if (ps_duplicate(a))

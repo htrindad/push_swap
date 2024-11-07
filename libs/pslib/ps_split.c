@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 19:39:53 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/05 19:49:41 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:29:39 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,19 @@ char	**ps_split(char const *s, char c)
 {
 	int		token;
 	char	**ptr;
+	size_t	j;
+	size_t	f;
 
 	if (s == NULL)
+		return (NULL);
+	j = 0;
+	f = 0;
+	while (s[j])
+	{
+		f += (s[j] == ' ' || s[j] == '	');
+		j++;
+	}
+	if (f == j)
 		return (NULL);
 	token = ps_tcount(s, c);
 	ptr = malloc((token + 1) * sizeof(char *));
