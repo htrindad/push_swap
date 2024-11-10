@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:36:10 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/05 14:56:59 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:20:58 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,5 @@ bool	ps_duplicate(t_stack *node);
 void	ps_setprice(t_stack *a, t_stack *b);
 void	ps_setcheapest(t_stack *node);
 size_t	ps_nlen(char *nbr);
-bool	ps_isdigit(char *nbr);
 
 #endif

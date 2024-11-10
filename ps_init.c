@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:09:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 13:26:19 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:25:49 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ static bool	error_s(char *str)
 	if (!(*str == '+' || *str == '-' \
 			|| (*str >= '0' && *str <= '9')))
 		return (true);
-	if ((*str == '+' || str == '-' \
-			&& !(str[1] >= '0' && str[1] <= '9')))
+	if ((*str == '+' || *str == '-') \
+			&& !(str[1] >= '0' && str[1] <= '9'))
 		return (true);
 	while (*++str)
-		if (!(*str >= '0' && *str < = '9'))
+		if (!(*str >= '0' && *str <= '9'))
 			return (true);
 	return (false);
 }
@@ -47,7 +47,7 @@ void	ps_init(t_stack **a, char **av, bool one)
 		nbr = ps_atol(av[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			free_r(a, av, one);
-		ps_stackaddlast(a, ps_stackcreate(nbr));
+		ps_stackaddback(a, ps_stackcreate((int)nbr));
 		i++;		
 	}
 	if (one)

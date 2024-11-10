@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:51:41 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 13:46:44 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:34:54 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ void	pb(t_stack **a, t_stack **b);
 void	small_sort(t_stack **a);
 void	turk(t_stack **a, t_stack **b);
 void	init_map(t_stack *a, t_stack *b);
+void	finish_rotation(t_stack **node, t_stack *top, bool stack);
+void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
+void	revrotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
+void	ps_init(t_stack **a, char **av, bool one);
+void	subsmall_sort(t_stack **a, t_stack **b);
 void	finish_rotation(t_stack **node, t_stack *top, bool stack);
 
 #endif

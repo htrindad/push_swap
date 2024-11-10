@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 17:09:28 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 13:15:15 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:19:55 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-static bool	ps_isdigit(char c)
+static bool	ps_isnum(char c)
 {
 	return (c >= '0' && c <= '9');
 }
@@ -36,10 +36,10 @@ long	ps_atol(char *num)
 			neg = -1;
 		i++;
 	}
-	if (ps_isdigit(num[i]))
+	if (ps_isnum(num[i]))
 	{
 		n = num[i++] - '0';
-		while (ps_isdigit(num[i]))
+		while (ps_isnum(num[i]))
 			n = n * 10 + num[i++] - '0';
 	}
 	return (n * neg);
