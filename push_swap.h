@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:51:41 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/30 18:30:09 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 12:28:36 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	move_nodes(t_stack **a, t_stack **b);
 void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
 void	rrotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
 void	finish_rot(t_stack **node, t_stack *top, bool stack);
+bool	cem(int ac, char **av);
 
 #endif
