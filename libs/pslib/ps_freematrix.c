@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:16:30 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 13:21:57 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 15:22:33 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	ps_freematrix(char **av)
 {
-	size_t	i;
+	int	i;
 
-	if (av == NULL)
+	i = -1;
+	if (av == NULL || *av == NULL)
 		return ;
-	i = 0;
-	while (av && av[i])
+	while (av[i])
 		free(av[i++]);
-	if (av)
-		free(av);
+	free(av - 1);
 }
