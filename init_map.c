@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:37:55 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 13:59:00 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:54:42 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	set_target(t_stack *a, t_stack *b)
 {
-	t_stack *ca;
+	t_stack	*ca;
 	t_stack	*target;
 	long	bmi;
 

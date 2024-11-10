@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:09:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 14:25:49 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:54:56 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ps_init(t_stack **a, char **av, bool one)
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			free_r(a, av, one);
 		ps_stackaddback(a, ps_stackcreate((int)nbr));
-		i++;		
+		i++;
 	}
 	if (one)
 		ps_freematrix(av);
