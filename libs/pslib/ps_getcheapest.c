@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:01:38 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/30 17:46:35 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:00:44 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*ps_getcheapest(t_stack *node)
 {
-	if (!node)
+	if (node == NULL)
 		return (NULL);
 	while (node)
 	{

@@ -2,7 +2,7 @@ NAME = push_swap
 
 M = ./moves
 
-SRC = $(M)/swap.c $(M)/push.c $(M)/rotate.c $(M)/rrotate.c main.c ps_init.c
+SRC = $(M)/swap.c $(M)/push.c $(M)/rotate.c $(M)/rrotate.c main.c ps_init.c small_sort.c turk.c init_map.c rot_map.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   small_sort.c                                       :+:      :+:    :+:   */
+/*   rot_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 13:28:50 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 13:48:20 by htrindad         ###   ########.fr       */
+/*   Created: 2024/11/10 13:44:08 by htrindad          #+#    #+#             */
+/*   Updated: 2024/11/10 13:46:08 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	small_sort(t_stack **a)
+void	finish_roation(t_stack **node, t_stack *top, bool stack);
 {
-	t_stack	*highest;
-
-	highest = ps_gethighest(*a);
-	if (*a == highest)
-		ra(a);
-	else if ((*a)->next = highest)
-		rra(a);
-	if ((*a)->value > (*a)->next->value)
-		sa(a);
-}
-
-void	subsmall_sort(t_stack **a, t_stack **b)
-{
-	while (ps_countnode(*a) > 3)
+	while (*node != top)
 	{
-		init_map(&a, &b);
-		finish_rotation(a, ps_getlowest(*a), false);
-		pb(a, b);
+		if (!stack)
+		{
+			if (top->am)
+				ra(node);
+			else
+				rra(node);
+		}
+		else
+		{
+			if (top->am)
+				rb(node);
+			else
+				rrb(node);
+		}
 	}
 }

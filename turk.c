@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   small_sort.c                                       :+:      :+:    :+:   */
+/*   turk.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 13:28:50 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 13:48:20 by htrindad         ###   ########.fr       */
+/*   Created: 2024/11/10 13:33:03 by htrindad          #+#    #+#             */
+/*   Updated: 2024/11/10 14:00:24 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	small_sort(t_stack **a)
+static void	node_mov(t_stack **a, t_stack **b)
 {
-	t_stack	*highest;
+	t_stack	*cheapest;
 
-	highest = ps_gethighest(*a);
-	if (*a == highest)
-		ra(a);
-	else if ((*a)->next = highest)
-		rra(a);
-	if ((*a)->value > (*a)->next->value)
-		sa(a);
+	cheapest = ps_getcheapest(*b);
 }
 
-void	subsmall_sort(t_stack **a, t_stack **b)
+void	turk(t_stack **a, t_stack **b)
 {
-	while (ps_countnode(*a) > 3)
+	t_stack	*lowest;
+	int		la;
+
+	la = ps_countnode(*a);
+	if (la == 5)
+		subsmall_sort(a, b);
+	else
+		while (la-- > 3)
+			pb(a, b);
+	small_sort(a);
+	while (*b)
 	{
-		init_map(&a, &b);
-		finish_rotation(a, ps_getlowest(*a), false);
-		pb(a, b);
+		init_map(a, b);
 	}
 }

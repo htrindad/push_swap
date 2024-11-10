@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:06:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 13:28:41 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 13:34:27 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,9 @@ int	main(int ac, char **av)
 		if (ps_countnode(a) == 2)
 			sa(&a);
 		else if (ps_countnode(a) == 3)
+			small_sort(&a);
+		else
+			turk(&a, &b);
 	}
+	ps_freestack(&a);
 }
