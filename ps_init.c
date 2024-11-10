@@ -5,39 +5,51 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 14:09:42 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/05 14:57:29 by htrindad         ###   ########.fr       */
+/*   Created: 2024/11/10 13:09:31 by htrindad          #+#    #+#             */
+/*   Updated: 2024/11/10 13:26:19 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static bool	check_error(char *arg)
+static bool	error_s(char *str)
 {
-	if (!(*arg == '-' || *arg == '+' || (*arg >= '0' && *arg <= '9')))
+	if (!(*str == '+' || *str == '-' \
+			|| (*str >= '0' && *str <= '9')))
 		return (true);
-	if ((*arg == '-' || *arg == '+') && !(arg[1] >= '0' && arg[1] <= '9'))
+	if ((*str == '+' || str == '-' \
+			&& !(str[1] >= '0' && str[1] <= '9')))
 		return (true);
-	while (*++arg)
-		if (!(*arg >= '0' && *arg <= '9'))
+	while (*++str)
+		if (!(*str >= '0' && *str < = '9'))
 			return (true);
 	return (false);
 }
 
-void	ps_init(t_stack **a, char **av)
+static void	free_r(t_stack **node, char **av, bool one)
 {
-	size_t	i;
+	ps_freestack(node);
+	if (one)
+		ps_freematrix(av);
+	ps_quiterror();
+}
+
+void	ps_init(t_stack **a, char **av, bool one)
+{
 	long	nbr;
+	int		i;
 
 	i = 0;
 	while (av[i])
 	{
+		if (error_s(av[i]))
+			free_r(a, av, one);
 		nbr = ps_atol(av[i]);
-		if (check_error(av[i]) || nbr < INT_MIN || nbr > INT_MAX
-			|| ps_nlen(av[i]) > 10 || ps_isdigit(av[i]))
-			ending(a, av);
-		ps_stackaddback(a, ps_stackcreate((int)nbr));
-		i++;
+		if (nbr > INT_MAX || nbr < INT_MIN)
+			free_r(a, av, one);
+		ps_stackaddlast(a, ps_stackcreate(nbr));
+		i++;		
 	}
-	ps_setindex(*a);
+	if (one)
+		ps_freematrix(av);
 }

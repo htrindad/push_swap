@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:33:18 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/24 17:15:01 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/10 13:22:54 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ps_quiterror(void)
 {
 	write(2, "Error\n", 6);
-	exit(0);
+	exit(-1);
 }

@@ -2,8 +2,7 @@ NAME = push_swap
 
 M = ./moves
 
-SRC = main.c $(M)/swap.c $(M)/push.c $(M)/rotate.c $(M)/rrotate.c ps_init.c small_sort.c ending.c get_vals.c turk.c \
-      stack_reset.c node_map.c cem.c
+SRC = $(M)/swap.c $(M)/push.c $(M)/rotate.c $(M)/rrotate.c main.c ps_init.c
 
 OBJ = $(SRC:.c=.o)
 
