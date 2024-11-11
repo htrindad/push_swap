@@ -6,94 +6,83 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 19:39:53 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/07 17:29:39 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:14:15 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pslib.h"
 
-static int	ps_tcount(char const *s, char c)
+static int	tcount(char const *str, char sep)
 {
-	int	token;
+	int		count;
+	bool	hap;
 
-	token = 0;
-	while (*s)
+	count = 0;
+	while (*str)
 	{
-		if (*s != c)
+		hap = false;
+		while (*str == sep && *str)
+			str++;
+		while (*str != sep && *str)
 		{
-			token++;
-			while (*s && *s != c)
-				s++;
+			if (!hap)
+			{
+				count++;
+				hap = true;
+			}
+			str++;
 		}
-		else
-			s++;
 	}
-	return (token);
+	return (count);
 }
 
-static int	ps_ca(char **ptr, int j)
+static char	*get_next_word(char const *str, char sep)
 {
-	if (ptr[j] == NULL)
-	{
-		while (j >= 0)
-		{
-			free(ptr[j]);
-			j--;
-		}
-		free(ptr);
-		return (0);
-	}
-	return (1);
-}
+	static int	cur = 0;
+	char		*n_str;
+	int			len;
+	int			i;
 
-static int	ps_la(char const *s, char c, char **ptr, int i)
-{
-	int	sta;
-	int	j;
-
-	j = 0;
-	while (s[i])
-	{
-		while (s[i] == c && s[i])
-			i++;
-		if (s[i] != c && s[i])
-		{
-			sta = i;
-			while (s[i] && s[i] != c)
-				i++;
-			ptr[j] = ps_substr(s, sta, i - sta);
-			if (!ps_ca(ptr, j))
-				return (0);
-			j++;
-		}
-	}
-	return (1);
+	len = 0;
+	i = 0;
+	while (str[cur] == sep)
+		cur++;
+	while ((str[cur + len] != sep) && str[cur + len])
+		len++;
+	n_str = malloc(len + 1);
+	if (n_str == NULL)
+		return (NULL);
+	while ((str[cur] != sep) && str[cur])
+		n_str[i++] = str[cur++];
+	n_str[i] = 0;
+	return (n_str);
 }
 
 char	**ps_split(char const *s, char c)
 {
 	int		token;
-	char	**ptr;
-	size_t	j;
-	size_t	f;
+	char	**matrix;
+	int		i;
 
-	if (s == NULL)
+	i = 0;
+	token = tcount(s, c);
+	if (!token)
+		exit(-1);
+	matrix = malloc(sizeof(char *) * (token + 2));
+	if (matrix == NULL)
 		return (NULL);
-	j = 0;
-	f = 0;
-	while (s[j])
+	while (token -- >= 0)
 	{
-		f += (s[j] == ' ' || s[j] == '	');
-		j++;
+		if (!i)
+		{
+			matrix[i] = malloc(1);
+			if (matrix == NULL)
+				return (NULL);
+			matrix[i++][0] = 0;
+			continue ;
+		}
+		matrix[i++] = get_next_word(s, c);
 	}
-	if (f == j)
-		return (NULL);
-	token = ps_tcount(s, c);
-	ptr = malloc((token + 1) * sizeof(char *));
-	if (ptr == NULL)
-		return (NULL);
-	if (!ps_la(s, c, ptr, 0))
-		return (NULL);
-	ptr[token] = NULL;
-	return (ptr);
+	matrix[i] = NULL;
+	return (matrix);
 }

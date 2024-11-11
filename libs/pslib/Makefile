@@ -7,7 +7,7 @@ SRC = ps_strlen.c ps_atol.c ps_strdup.c ps_substr.c ps_split.c ps_stackcreate.c 
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra -O3
 
 all: $(NAME)
 
