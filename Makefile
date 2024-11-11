@@ -6,7 +6,7 @@ SRC = $(M)/swap.c $(M)/push.c $(M)/rotate.c $(M)/rrotate.c main.c ps_init.c smal
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra -O3
+CFLAGS = -Wall -Werror -Wextra -O3 -g
 
 PSLIB_DIR = ./libs/pslib
 PSLIB = $(PSLIB_DIR)/pslib.a

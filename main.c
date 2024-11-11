@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:06:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 16:06:44 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:32:46 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ int	main(int ac, char **av)
 	if (ac == 2)
 		av = ps_split(av[1], ' ');
 	ps_init(&a, av + 1, ac == 2);
-	if (ps_duplicate(a))
-	{
-		ps_freestack(&a);
-		ps_quiterror();
-	}
 	if (!ps_sorted(a))
 	{
 		if (ps_countnode(a) == 2)

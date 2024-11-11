@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:36:10 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 14:20:58 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:30:23 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int		ps_countnode(t_stack *stack);
 int		ps_highestval(t_stack *node);
 void	ps_stackaddfront(t_stack **stack, t_stack *new);
 t_stack	*ps_getcheapest(t_stack *node);
-bool	ps_duplicate(t_stack *node);
 void	ps_setprice(t_stack *a, t_stack *b);
 void	ps_setcheapest(t_stack *node);
 size_t	ps_nlen(char *nbr);

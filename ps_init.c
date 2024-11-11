@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:09:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 14:54:56 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:33:00 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,19 @@ static void	free_r(t_stack **node, char **av, bool one)
 	ps_quiterror();
 }
 
+static bool	rep(t_stack *a, int val)
+{
+	if (a == NULL)
+		return (false);
+	while (a)
+	{
+		if (a->val == val)
+			return (true);
+		a = a->next;
+	}
+	return (false);
+}
+
 void	ps_init(t_stack **a, char **av, bool one)
 {
 	long	nbr;
@@ -46,6 +59,8 @@ void	ps_init(t_stack **a, char **av, bool one)
 			free_r(a, av, one);
 		nbr = ps_atol(av[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
+			free_r(a, av, one);
+		if (rep(*a, (int)nbr))
 			free_r(a, av, one);
 		ps_stackaddback(a, ps_stackcreate((int)nbr));
 		i++;
