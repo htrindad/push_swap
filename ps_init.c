@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:09:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/11 14:33:00 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/11 16:01:51 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ps_init(t_stack **a, char **av, bool one)
 		if (error_s(av[i]))
 			free_r(a, av, one);
 		nbr = ps_atol(av[i]);
-		if (nbr > INT_MAX || nbr < INT_MIN)
+		if (nbr > INT_MAX || nbr < INT_MIN || ps_nlen(av[i]) > 10)
 			free_r(a, av, one);
 		if (rep(*a, (int)nbr))
 			free_r(a, av, one);
