@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:55:36 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/29 16:50:11 by htrindad         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:15:52 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ps_setindex(t_stack *stack)
 	while (stack)
 	{
 		stack->index = i;
+		stack->cheapest = false;
 		if (i <= center)
 			stack->am = true;
 		else
