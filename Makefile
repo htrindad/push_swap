@@ -1,13 +1,8 @@
 NAME = push_swap
-
 M = ./moves
-
-SRC = $(M)/swap.c $(M)/push.c $(M)/rotate.c $(M)/rrotate.c main.c ps_init.c small_sort.c turk.c init_map.c rot_map.c
-
+SRC = $(M)/swap.c $(M)/push.c $(M)/rotate.c $(M)/rrotate.c main.c ps_init.c small_sort.c turk.c init_map.c rot_map.c segregate.c
 OBJ = $(SRC:.c=.o)
-
-CFLAGS = -Wall -Werror -Wextra -O3
-
+CFLAGS = -Wall -Werror -Wextra -g3
 PSLIB_DIR = ./libs/pslib
 PSLIB = $(PSLIB_DIR)/pslib.a
 

@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:09:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/11 16:01:51 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/07/31 21:05:34 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 static bool	error_s(char *str)
 {
-	if (!(*str == '+' || *str == '-' \
+	if (!(*str == '+' || *str == '-'
 			|| (*str >= '0' && *str <= '9')))
 		return (true);
-	if ((*str == '+' || *str == '-') \
-			&& !(str[1] >= '0' && str[1] <= '9'))
+	if ((*str == '+' || *str == '-')
+		&& !(str[1] >= '0' && str[1] <= '9'))
 		return (true);
 	while (*++str)
 		if (!(*str >= '0' && *str <= '9'))

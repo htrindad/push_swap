@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:14:15 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/30 13:31:20 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/07/31 21:33:31 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ t_stack	*ps_stackcreate(int val)
 	stack->next = NULL;
 	stack->val = val;
 	stack->chunk = 0;
+	stack->rank = 0;
 	return (stack);
 }

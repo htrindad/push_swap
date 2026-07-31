@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 17:09:28 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 14:19:55 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/07/31 21:04:58 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ long	ps_atol(char *num)
 	neg = 1;
 	i = 0;
 	n = 0;
-	while (num[i] == ' ' || num[i] == '\t' \
-		|| num[i] == '\n' || num[i] == '\r' \
+	while (num[i] == ' ' || num[i] == '\t'
+		|| num[i] == '\n' || num[i] == '\r'
 		|| num[i] == '\v' || num[i] == '\f')
 		i++;
 	if (num[i] == '+' || num[i] == '-')

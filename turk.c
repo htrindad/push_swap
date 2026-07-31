@@ -6,10 +6,11 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:33:03 by htrindad          #+#    #+#             */
-/*   Updated: 2024/11/10 14:46:16 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/08/01 00:02:07 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libs/pslib/pslib.h"
 #include "push_swap.h"
 
 static void	node_mov(t_stack **a, t_stack **b)
@@ -34,6 +35,8 @@ void	turk(t_stack **a, t_stack **b)
 	la = ps_countnode(*a);
 	if (la == 5)
 		subsmall_sort(a, b);
+	else if (la > 120)
+		quick_sort(a, b, la);
 	else
 		while (la-- > 3)
 			pb(a, b);
