@@ -3,7 +3,7 @@ M = ./moves
 SRC = $(M)/swap.c $(M)/push.c $(M)/rotate.c $(M)/rrotate.c ps_init.c small_sort.c turk.c init_map.c rot_map.c segregate.c
 MAIN = main.c
 OBJ = $(SRC:.c=.o)
-CFLAGS = -Wall -Werror -Wextra -O3
+CFLAGS = -Wall -Werror -Wextra -g3
 PSLIB_DIR = ./libs/pslib
 PSLIB = $(PSLIB_DIR)/pslib.a
 GET_NEXT_LINE_DIR = ./libs/get_next_line

@@ -6,35 +6,36 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/01 19:26:43 by htrindad          #+#    #+#             */
-/*   Updated: 2026/08/01 20:33:40 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/08/01 21:03:35 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
+#include <stdio.h>
 
 static void	test_move(t_stack **a, t_stack **b, char const *line)
 {
-	if (ps_strncmp(line, "sa", ps_strlen(line)))
+	if (!ps_strncmp(line, "sa\n", ps_strlen(line)))
 		nv_sa(a);
-	else if (ps_strncmp(line, "sb", ps_strlen(line)))
+	else if (!ps_strncmp(line, "sb\n", ps_strlen(line)))
 		nv_sb(b);
-	else if (ps_strncmp(line, "ss", ps_strlen(line)))
+	else if (!ps_strncmp(line, "ss\n", ps_strlen(line)))
 		nv_ss(a, b);
-	else if (ps_strncmp(line, "ra", ps_strlen(line)))
+	else if (!ps_strncmp(line, "ra\n", ps_strlen(line)))
 		nv_ra(a);
-	else if (ps_strncmp(line, "rb", ps_strlen(line)))
+	else if (!ps_strncmp(line, "rb\n", ps_strlen(line)))
 		nv_rb(b);
-	else if (ps_strncmp(line, "rr", ps_strlen(line)))
+	else if (!ps_strncmp(line, "rr\n", ps_strlen(line)))
 		nv_rr(a, b);
-	else if (ps_strncmp(line, "rra", ps_strlen(line)))
+	else if (!ps_strncmp(line, "rra\n", ps_strlen(line)))
 		nv_rra(a);
-	else if (ps_strncmp(line, "rrb", ps_strlen(line)))
+	else if (!ps_strncmp(line, "rrb\n", ps_strlen(line)))
 		nv_rrb(b);
-	else if (ps_strncmp(line, "rrr", ps_strlen(line)))
+	else if (!ps_strncmp(line, "rrr\n", ps_strlen(line)))
 		nv_rrr(a, b);
-	else if (ps_strncmp(line, "pa", ps_strlen(line)))
+	else if (!ps_strncmp(line, "pa\n", ps_strlen(line)))
 		nv_pa(b, a);
-	else if (ps_strncmp(line, "pb", ps_strlen(line)))
+	else if (!ps_strncmp(line, "pb\n", ps_strlen(line)))
 		nv_pb(a, b);
 	else
 		free_all(a, b);
@@ -51,7 +52,7 @@ static inline void	test_sort(t_stack **a, t_stack **b)
 		free(line);
 		line = get_next_line(0);
 	}
-	if (ps_sorted(*a) && !ps_countnode(*b))
+	if (ps_sorted(*a))
 		write(1, "OK!\n", 4);
 	else
 		write(1, "KO!\n", 4);;
