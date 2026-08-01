@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:51:41 by htrindad          #+#    #+#             */
-/*   Updated: 2026/07/31 22:29:19 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/08/01 19:47:38 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,9 @@ void	ps_init(t_stack **a, char **av, bool one);
 void	subsmall_sort(t_stack **a, t_stack **b);
 void	finish_rotation(t_stack **node, t_stack *top, bool stack);
 void	quick_sort(t_stack **a, t_stack **b, int la);
+void	swap(t_stack **node);
+void	rotate(t_stack **node);
+void	rrotate(t_stack **stack);
+void	push(t_stack **origin, t_stack **target);
 
 #endif

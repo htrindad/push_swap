@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:37:31 by htrindad          #+#    #+#             */
-/*   Updated: 2024/10/01 16:06:52 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/08/01 19:47:12 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	push(t_stack **origin, t_stack **target)
+void	push(t_stack **origin, t_stack **target)
 {
 	t_stack	*tmp;
 

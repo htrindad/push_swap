@@ -6,13 +6,13 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:42:29 by htrindad          #+#    #+#             */
-/*   Updated: 2024/09/17 17:24:54 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/08/01 19:46:40 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	rotate(t_stack **stack)
+void	rotate(t_stack **stack)
 {
 	t_stack	*last;
 
