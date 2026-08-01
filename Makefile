@@ -12,7 +12,7 @@ B_DIR = ./bonus
 B_SRC = $(B_DIR)/free_all.c $(B_DIR)/nv_push.c $(B_DIR)/nv_rotate.c $(B_DIR)/nv_rrotate.c $(B_DIR)/nv_swap.c
 B_OBJ = $(B_SRC:.c=.o)
 MAIN_BONUS = $(B_DIR)/main.c
-BONUS = push_swap_bonus
+BONUS = checker
 MAIN_OBJ = $(MAIN:.c=.o)
 MAIN_BOBJ = $(MAIN_BONUS:.c=.o)
 

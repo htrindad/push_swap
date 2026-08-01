@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/01 19:26:43 by htrindad          #+#    #+#             */
-/*   Updated: 2026/08/01 21:03:35 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/08/01 21:18:59 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static inline void	test_sort(t_stack **a, t_stack **b)
 	if (ps_sorted(*a))
 		write(1, "OK!\n", 4);
 	else
-		write(1, "KO!\n", 4);;
+		write(1, "KO!\n", 4);
 }
 
 int	main(int ac, char **av)
