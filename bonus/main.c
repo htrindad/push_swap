@@ -6,12 +6,11 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/01 19:26:43 by htrindad          #+#    #+#             */
-/*   Updated: 2026/08/02 14:21:08 by htrindad         ###   ########.fr       */
+/*   Updated: 2026/08/02 16:32:07 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-#include <stdio.h>
 
 static void	test_move(t_stack **a, t_stack **b, char const *line)
 {
@@ -52,10 +51,10 @@ static inline void	test_sort(t_stack **a, t_stack **b)
 		free(line);
 		line = get_next_line(0);
 	}
-	if (ps_sorted(*a))
-		write(1, "OK!\n", 4);
+	if (ps_sorted(*a) && !ps_countnode(*b))
+		write(1, "OK\n", 3);
 	else
-		write(1, "KO!\n", 4);
+		write(1, "KO\n", 3);
 }
 
 int	main(int ac, char **av)
