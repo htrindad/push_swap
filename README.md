@@ -119,7 +119,16 @@ calls both `fclean` and `all`.
 
 ### How AI was used
 
-AI was not used in most of the project except for the `segregate.c` file, where Claude found and fixed the bugs I knew existed but could not locate. Regarding the optimization of my sorting algorithm with 500 nodes, the function `set_rank` was fixed by Claude, while I had added the `restrict` keyword. And on the `./bonus/main.c` where I had a bug where I was calling `ps_strncmp` without asking if it was false, so the checker was always outputting `KO!` when sending the arguments through a pipe. With that information, I had fixed the problem myself, and managed to make it work. Claude had also pointed out a missing `else` statement in the function `remove_rank`, which it proceeded to write it.
+`segregate.c` - 2 bugs, both found and fixed by Claude, and 2 structural fixes:
+
+- `set_rank` used to determine the partition by value and not sorted position. Which caused the chunks to be unbalanced, and a signed overflow that wrote out of bounds. Claude had made the replacement, while I added the `restrict` keyword.
+- `remove_rank` was missing an else, causing a rotation after every push. Claude wrote the fix.
+- Claude had also created `new_ranks`, pulling allocation out of `set_rank`, removed a redundant `ps_setindex` call, and cut `remove_rank` from 5 to 4 parameters to be in compliance with the norm.
+- Claude tried experimenting `SEG` from 2 to 17, and found out that the already set value of 5 was already optimal.
+
+`./bonus/main.c` - Claude diagnosed the `ps_strncmp` inversion. I fixed it and then added a check to see if the `b` stack is empty.
+
+Everything else predates the use of AI, the algorithm itself, the chunk partitioning, the cheapest node insertion, all of that was not AI, and predate this work.
 
 ### References
 
